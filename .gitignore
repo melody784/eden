@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 运行时聊天记录（隐私）：sessions 文件夹本身上传，里面的记录不跟踪
+sessions/*.json
+!sessions/.gitkeep
+
+# 系统文件
+.DS_Store
+Thumbs.db
