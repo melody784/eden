@@ -69,6 +69,25 @@ streamlit run eden_chat.py
 
 > ⚠️ 不要把真实密钥写进代码或上传到 GitHub。
 
+### （可选）使用虚拟环境
+
+双击 `启动.bat` 时它会自动帮你打理环境：
+- 检测到项目里有虚拟环境（`.venv` / `venv` / `env`）→ 自动用它启动；
+- 没有虚拟环境 → 会询问你是否创建（输入 `Y` 自动执行 `python -m venv .venv`）；
+- 环境里没装依赖 → 会询问是否自动安装（输入 `Y` 自动 `pip install -r requirements.txt`）。
+
+所以**不熟悉命令也没关系**，一路按提示输入 `Y` 就能跑起来。
+
+想手动操作也可以：
+
+```bash
+python -m venv .venv            # 创建虚拟环境
+.\.venv\Scripts\activate        # 激活（Windows）
+pip install -r requirements.txt # 安装依赖
+```
+
+之后仍可直接双击 `启动.bat`——它会自动优先使用 `.venv`，无需手动激活。
+
 ## 使用说明
 
 - 打开就是「花园」：夏娃永远排在第一位，点她即可开始聊天；
