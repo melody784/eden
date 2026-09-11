@@ -1,4 +1,6 @@
 @echo off
+rem ---- 必须启用延迟展开：下面括号块内要用 !变量! 才能取到刚输入的值 ----
+setlocal enabledelayedexpansion
 chcp 65001 >nul
 title Eden · 本地私密 AI 聊天室
 
@@ -63,7 +65,7 @@ if errorlevel 1 (
     echo 如果直接启动会报错：ModuleNotFoundError。
     echo.
     set /p INSTALL=是否现在帮你自动安装？输入 Y 安装 / 输入 N 手动安装 ：
-    if /i "%INSTALL%"=="Y" (
+    if /i "!INSTALL!"=="Y" (
         echo.
         echo 正在自动安装，请稍候（需要联网）…
         "%PYTHON%" -m pip install -r requirements.txt
@@ -101,7 +103,7 @@ if not defined KEY (
         echo  [提示] 未输入 Key，本次启动可能无法对话。
         echo  之后可双击本文件重新设置。
     ) else (
-        setx DEEPSEEK_API_KEY "%KEY%" >nul
+        setx DEEPSEEK_API_KEY "!KEY!" >nul
         echo 已保存到本机，下次启动无需再输入。
     )
 )

@@ -1,0 +1,2 @@
+# Windows 批处理文件必须用 CRLF：用 LF 会让 cmd.exe 的 goto / 括号块按字节偏移错位执行
+*.bat text eol=crlf
